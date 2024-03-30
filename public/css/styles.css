@@ -1,0 +1,60 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+footer a,
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-toggler,
+.navbar {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px)
+}
+
+.background-color-primary {
+    background-color: #ffa300;
+}
+
+.btn-color-primary {
+    background-color: orange;
+    color: white;
+}
+
+.btn-color-primary:hover {
+    background-color: white;
+    color: orange;
+    border-color: orange;
+}
+
+.btn-green {
+    background-color: green;
+    color: white;
+}
+
+.btn-green:hover {
+    background-color: white;
+    color: green;
+    border-color: green;
+}
+
+.background-header {
+    background-image: url(/public/img/hero_background.svg);
+    background-size: auto;
+}
+
+.background-footer {
+    background-color: #ffa300;
+    background-image: url(/public/img/footer_background.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}

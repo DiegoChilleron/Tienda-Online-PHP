@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c>
+  #  Redirige todas las solicitudes no existentes a index.php 
+  RewriteEngine On
+
+  # Si la URL solicitada no corresponde a un archivo, directorio o enlace simbólico existente
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-l
+
+  # Reescribe la URL para que sea manejada por index.php
+  RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+
+  # Si la URL solicitada corresponde a un archivo %.php existente en el directorio /view
+  RewriteCond "%{REQUEST_URI}" ^\/(.+)$
+  RewriteCond "%{DOCUMENT_ROOT}view/%1.php" -f
+
+  # Reescribe la URL para que sea manejada por el archivo .view.php correspondiente
+  RewriteRule ^(.+)$ view/%1.php [NC,L]
+
+  # Necesario para HSTS
+  # Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+  
+</IfModule>
